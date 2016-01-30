@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\voula\Desktop\ereceiptweb</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="app/app.js">
+      <publishTime>02/18/2015 00:04:50</publishTime>
+    </File>
+    <File Include="app/controllers/clientsController.js">
+      <publishTime>12/23/2015 15:21:45</publishTime>
+    </File>
+    <File Include="app/controllers/exportController.js">
+      <publishTime>12/02/2014 12:22:46</publishTime>
+    </File>
+    <File Include="app/controllers/homeController.js">
+      <publishTime>11/30/2014 20:33:28</publishTime>
+    </File>
+    <File Include="app/controllers/indexController.js">
+      <publishTime>02/17/2015 22:42:29</publishTime>
+    </File>
+    <File Include="app/controllers/loginController.js">
+      <publishTime>02/18/2015 21:19:31</publishTime>
+    </File>
+    <File Include="app/controllers/receiptsController.js">
+      <publishTime>12/23/2015 16:19:51</publishTime>
+    </File>
+    <File Include="app/controllers/signupController.js">
+      <publishTime>11/30/2014 20:40:07</publishTime>
+    </File>
+    <File Include="app/directives/trNgGrid.js">
+      <publishTime>02/12/2015 16:02:16</publishTime>
+    </File>
+    <File Include="app/directives/trNgGrid.min.js">
+      <publishTime>02/15/2015 19:44:39</publishTime>
+    </File>
+    <File Include="app/services/authInterceptorService.js">
+      <publishTime>11/30/2014 20:40:38</publishTime>
+    </File>
+    <File Include="app/services/authService.js">
+      <publishTime>02/05/2015 11:48:35</publishTime>
+    </File>
+    <File Include="app/services/receiptsService.js">
+      <publishTime>12/23/2015 16:21:15</publishTime>
+    </File>
+    <File Include="app/views/clients.html">
+      <publishTime>12/23/2015 15:24:29</publishTime>
+    </File>
+    <File Include="app/views/dashboard.html">
+      <publishTime>02/18/2015 22:12:52</publishTime>
+    </File>
+    <File Include="app/views/home.html">
+      <publishTime>02/05/2015 14:16:09</publishTime>
+    </File>
+    <File Include="app/views/login.html">
+      <publishTime>02/18/2015 13:50:05</publishTime>
+    </File>
+    <File Include="app/views/print.html">
+      <publishTime>12/23/2015 16:40:56</publishTime>
+    </File>
+    <File Include="app/views/receipts.html">
+      <publishTime>08/28/2015 11:48:53</publishTime>
+    </File>
+    <File Include="app/views/receiptTemplate.html">
+      <publishTime>02/02/2015 19:40:08</publishTime>
+    </File>
+    <File Include="app/views/reports.html">
+      <publishTime>02/08/2015 14:27:38</publishTime>
+    </File>
+    <File Include="app/views/signup.html">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="authComplete.html">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="bin/EReceipt.Web.dll">
+      <publishTime>12/31/2015 11:39:33</publishTime>
+    </File>
+    <File Include="content/css/bootstrap.min.css">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="content/css/font-awesome.min.css">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="content/css/loading-bar.css">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="content/css/loading-bar.min.css">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="content/css/site.css">
+      <publishTime>02/18/2015 00:30:25</publishTime>
+    </File>
+    <File Include="content/css/social-buttons.css">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="content/fonts/fontawesome-webfont.eot">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="content/fonts/fontawesome-webfont.svg">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="content/fonts/fontawesome-webfont.ttf">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="content/fonts/fontawesome-webfont.woff">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="content/fonts/FontAwesome.otf">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="content/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="content/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="content/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="content/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="content/img/ajax-loader.gif">
+      <publishTime>11/01/2013 09:52:40</publishTime>
+    </File>
+    <File Include="content/img/logo2.png">
+      <publishTime>02/25/2015 11:42:22</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>02/22/2015 13:13:39</publishTime>
+    </File>
+    <File Include="scripts/angular-local-storage.min.js">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="scripts/angular-locale_el-gr.js">
+      <publishTime>02/07/2014 10:30:23</publishTime>
+    </File>
+    <File Include="scripts/authComplete.js">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="scripts/bootstrap.min.js">
+      <publishTime>01/13/2014 08:30:24</publishTime>
+    </File>
+    <File Include="scripts/loading-bar.min.js">
+      <publishTime>10/06/2014 18:34:02</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/09/2015 15:35:31</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

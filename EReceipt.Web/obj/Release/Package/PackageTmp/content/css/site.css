@@ -1,0 +1,174 @@
+﻿/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+      padding-top: 40px;
+  xpadding-bottom: 10px;
+}
+
+.bottomMargin20 {
+    margin-bottom: 20px;
+}
+
+.topMargin20 {
+    margin-top: 20px;
+}
+
+.topMargin10 {
+    margin-top: 10px;
+}
+
+.tr-ng-grid-footer input {
+    width: 180px !important;
+}
+
+.tr-ng-grid-footer ul {
+    margin: 0 !important;
+}
+
+.selectedRow {
+    background-color: #AFBFC9 !important;
+}
+
+.mainContent {
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.linkPointer
+{
+    cursor: pointer;
+}
+
+.receiptBorder {
+    border: 1px solid #999999;
+    box-shadow: 1px 1px 10px #999999;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+.text-muted {
+    margin: 20px 0;
+}
+
+.form-login {
+    max-width: 330px;
+    padding: 0px 15px 5px 15px;
+    margin: 0 auto;
+}
+
+.form-login .form-login-heading {
+    margin-bottom: 10px;
+}
+
+.form-login .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+    .form-login .form-control:focus {
+        z-index: 2;
+    }
+
+.form-login input[type="password"] {
+    margin-top:5px;
+    margin-bottom: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.marginRight20 {
+    margin-right: 20px;
+}
+
+.nav-active-d a {
+    color: #555555;
+}
+
+.nav-active-d {
+    color: #555555;
+}
+
+.nav-active-d a:hover {
+    color: #555555;
+}
+
+.nav-active a {
+    color: #FFFFFF !important;
+}
+
+.nav-active {
+    background-color: #178ACC;
+    color: #FFFFFF !important;
+}
+
+.nav-active a:hover {
+    background-color: #178ACC !important;
+    color: #FFFFFF;
+}
+.nav-inactive a
+{
+    color: #555555 !important;
+}
+
+.subnav-active-d a {
+    color: #555555;
+}
+
+.subnav-active-d {
+    color: #555555;
+}
+
+.subnav-active-d a:hover {
+    color: #555555;
+}
+
+.subnav-active a {
+    color: #FFFFFF !important;
+}
+
+.subnav-active {
+    background-color: #178ACC;
+    color: #FFFFFF !important;
+}
+
+.subnav-active a:hover {
+    background-color: #178ACC !important;
+    color: #FFFFFF;
+}
+.subnav-inactive a
+{
+    color: #555555 !important;
+}
+
+.nav-inactive a.inactive {
+    color: #dddddd !important;
+}
+
+.submenuContainer {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+}
+

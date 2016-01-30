@@ -1,0 +1,283 @@
+﻿<div class="row" ng-show="authentication.isAuth">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-12"><h3><i class="fa fa-money"></i> Αποδείξεις - Τιμολόγια - Δελτία Αποστολής</h3></div>
+            </div>
+            <div class="btn-toolbar bottomMargin20" ng-show="!showReceiptForm">
+                <ul class="nav nav-pills nav-justified">
+                    <li ng-class="{'active': activePanel === 'receipts'}">
+                        <a data-toggle="pill" class="linkPointer" ng-click="setActivePanel('receipts')">Αποδείξεις</a>
+                    </li>
+                    <li ng-class="{'active': activePanel === 'invoices'}">
+                        <a data-toggle="pill" class="linkPointer" ng-click="setActivePanel('invoices')">Τιμολόγια</a>
+                    </li>
+                    <li ng-class="{'active': activePanel === 'delinvoices'}">
+                        <a data-toggle="pill" class="linkPointer" ng-click="setActivePanel('delinvoices')">Δελτία Αποστολής</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row" ng-show="!showReceiptForm">
+                <div class="col-lg-3 pull-right" ng-show="showReceipts">
+                    <div class="btn-group bottomMargin20">
+                        <a title="New Receipt" class="btn btn-default btn-sm" ng-click="createReceipt()"><i class="fa fa-plus-circle"></i></a>
+                        <a title="Edit Receipt" class="btn btn-default btn-sm" ng-click="editReceipt()" ng-disabled="receipt == null;"><i class="fa fa-pencil"></i></a>
+                        <a title="Print Receipt" class="btn btn-default btn-sm" ng-click="printReceipt()" ng-disabled="receipt == null;"><i class="fa fa-print"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-show="!showReceiptForm">
+                <div class="col-lg-12">
+                    <table selected-items="receipt" page-items="10" class="table table-hover table-striped" tr-ng-grid="" items="dataSource" enable-filtering="true" enable-sorting="true" enable-selections="true" enable-multi-row-selections="false">
+                        <thead>
+                            <tr>
+                                <th field-name="date | date:'yyyy-MM-dd'" display-name="Ημερομηνία" enable-filtering="false"></th>
+                                <th field-name="indexNumber" display-name="AA" enable-filtering="false"></th>
+                                <th field-name="totalAmount" display-name="Ποσό" enable-filtering="false"></th>
+                                <th field-name="isPrinted" display-name="Έχει Εκτυπωθεί"enable-filtering="false"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="linkPointer" ng-click="selectReceipt(gridItem)">
+                                <td ng-class="{'selectedRow': receiptSelectedRow == gridItem.indexNumber}" field-name="date | date:'yyyy-MM-dd'"></td>
+                                <td ng-class="{'selectedRow': receiptSelectedRow == gridItem.indexNumber}" field-name="indexNumber"></td>
+                                <td ng-class="{'selectedRow': receiptSelectedRow == gridItem.indexNumber}" field-name="totalAmount"></td>
+                                <td ng-class="{'selectedRow': receiptSelectedRow == gridItem.indexNumber}" field-name="isPrinted">
+                                    <input type="checkbox" ng-model="gridItem.isPrinted" disabled="disabled"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="row bottomMargin20" ng-show="showReceiptForm">
+                <div class="col-lg-12">
+                    <input type="radio" ng-model="rtype" value="1" ng-disabled="!isNewReceipt" /> Απόδειξη Παροχής Υπηρεσιών
+                    <input type="radio" ng-model="rtype" value="2" ng-disabled="!isNewReceipt" /> Τιμολόγιο Παροχής Υπηρεσιών
+                    <input type="radio" ng-model="rtype" value="3" ng-disabled="!isNewReceipt" /> Δελτίο Αποστoλής - Τιμολόγιο
+                </div>
+            </div>
+            <div class="row" ng-show="showReceiptForm">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        Όνομα: <input type="text" class="form-control" ng-model="common.client.firstName" disabled="disabled"/>
+                    </div>
+                    <div class="form-group">
+                        Επώνυμο: <input type="text" class="form-control" ng-model="common.client.lastName" disabled="disabled"/>
+                    </div>
+                    <div class="form-group">
+                        Διεύθυνση: <input type="text" class="form-control" ng-model="common.client.address" disabled="disabled"/>
+                    </div>
+                    <div class="form-group">
+                        ΦΠΑ (ευρώ): <input type="text" class="form-control" ng-model="receipt.vatAmount" disabled="disabled"/>
+                    </div>
+                    <div class="form-group">
+                        Καθαρό Ποσό: <input type="text" class="form-control" ng-model="receipt.netAmount" disabled="disabled"/>
+                    </div>
+                    <div class="form-group">
+                        Σύνολο: <input type="text" class="form-control" ng-model="receiptTotal" ng-disabled="rtype != 1"/>
+                    </div>
+                    <div class="form-group">
+                        ΦΠΑ%: <input type="text" class="form-control" ng-model="receipt.vatPercent"/>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        ΑΦΜ: <input type="text" class="form-control" ng-model="common.client.afm" disabled="disabled"/>
+                    </div>
+                    <div class="form-group">
+                        ΔΟΥ: <input type="text" class="form-control" ng-model="common.client.doy" disabled="disabled"/>
+                    </div>
+                    <div class="form-group" ng-show="rtype == 3">
+                        Τόπος Αποστολής: <input type="text" class="form-control" ng-model="receipt.placeOfOrigin"/>
+                    </div>
+                    <div class="form-group" ng-show="rtype == 3">
+                        Τόπος Προορισμού: <input type="text" class="form-control" ng-model="receipt.placeOfDelivery"/>
+                    </div>
+                    <div class="form-group">
+                        Αιτιολογία: <input type="text" class="form-control" ng-model="receipt.receiptDescription"/>
+                    </div>
+                    <div class="form-group">
+                        Ημερομηνία: <input type="text" class="form-control" ng-model="receipt.date" ng-disabled="!isNewReceipt"/>
+                    </div>
+                </div>             
+            </div>
+            <div class="panel panel-default" ng-show="showReceiptForm && rtype==2">
+                <div class="panel-heading">Είδη/Υπηρεσίες</div>
+                <div class="panel-body">
+                    <div class="row" ng-repeat="it in receipt.invoiceItems">
+                        <div class="col-lg-1">{{$index + 1}}</div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                Είδος Υπηρεσίας: <input type="text" class="form-control" ng-model="it.description"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                Δαπάνη: <input type="text" class="form-control" ng-model="it.paymentClientBehalf"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                Αμοιβή: <input type="text" class="form-control" ng-model="it.payment"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group"> 
+                                Σύνολο: <input type="text" class="form-control" disabled="disabled" value="{{1 * it.payment + 1 * it.paymentClientBehalf}}"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 topMargin20"><a title="Αφαίρεση Είδους/Υπηρεσίας" class="btn btn-danger btn-sm" ng-click="removeInvoiceItem($index)"><i class="fa fa-minus-circle"></i></a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5 pull-right">
+                            <input type="button" value="Προσθήκη Είδους/Υπηρεσίας" ng-click="addInvoiceItem()"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default" ng-show="showReceiptForm && rtype==3">
+                <div class="panel-heading">Είδη/Υπηρεσίες</div>
+                <div class="panel-body">
+                    <div class="row" ng-repeat="it in receipt.deliveryInvoiceItems">
+                        <div class="col-lg-1">{{$index + 1}}</div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                Είδος Εμπορεύματος: <input type="text" class="form-control" ng-model="it.description"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                Τ/Μ: <input type="text" class="form-control" ng-model="it.unitPrice"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                Ποσότητα: <input type="text" class="form-control" ng-model="it.quantity"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                Σύνολο: <input type="text" class="form-control" disabled="disabled" value="{{it.quantity * it.unitPrice}}"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 topMargin20"><a title="Αφαίρεση Είδους/Υπηρεσίας" class="btn btn-danger btn-sm" ng-click="removeDeliveryInvoiceItem($index)"><i class="fa fa-minus-circle"></i></a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5 pull-right">
+                            <input type="button" value="Προσθήκη Είδους/Υπηρεσίας" ng-click="addDeliveryInvoiceItem()"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-show="showReceiptForm">
+                <div class="col-lg-5 pull-right">
+                    <input type="button" class="btn btn-primary" ng-click="saveReceipt()" value="Αποθήκευση"/>
+                    <input type="button" class="btn btn-primary" ng-click="cancel()" value="Επιστροφή"/>
+                </div>
+            </div>
+            <div class="row" ng-show="!showReceiptForm">
+                <div class="col-lg-3 pull-right">
+                    <input type="button" class="btn btn-primary" value="Επιστροφή" ng-click="returnToClients()"/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="receiptviewdiv" style="display: none;">
+                <div style="padding-left:10px;margin-top:2px;">
+                    <table style="border-bottom:1px solid #cccccc;width:100%;height:100px;padding:10px;">
+                        <tr>
+                            <td>
+                                <img src="http://admin.tsotsis.gr/content/img/logo2.png" style="margin-bottom: 20px;"/>
+                            </td>
+                        </tr>
+                    </table><br />
+                    <table style="border-bottom: 1px solid #999999;width:100%;height:100px;">
+                        <tr>
+                            <td>
+                                ΤΣΟΤΣΗΣ ΑΝΕΛΚΥΣΤΗΡΕΣ<br />
+                                ΕΓΚΑΤΑΣΤΑΣΗ & ΣΥΝΤΗΡΗΣΗ ΑΝΕΛΚΥΣΤΗΡΩΝ<br />
+                                Κολοκοτρώνη 34 και Εδέσσης | 56430<br />
+                                Σταυρούπολη | Θεσσαλονίκη<br />
+                                Τηλ. & Φαξ: 2310.60.10.83<br />
+                                Email: info@tsotsis.gr<br />
+                                Α.Φ.Μ 800465929 Δ.Ο.Υ. Ε' Θεσ/νίκης
+                            </td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>Αρ. Απόδειξης:</td>
+                                        <td>{{receipt.indexNumber}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ημερομηνία:</td>
+                                        <td>{{receipt.date}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Υπόχρεος:</td>
+                                        <td>{{common.client.firstName}} {{common.client.lastName}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ΑΦΜ:</td>
+                                        <td>{{common.client.afm}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ΔΟΥ:</td>
+                                        <td>{{common.client.doy}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Διεύθυνση:</td>
+                                        <td>{{common.client.address}}</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="width:100%;height:100px;border-collapse: collapse;">
+                        <tr ng-show="rtype == 1">
+                            <td colspan="2" style="background-color:#eeeeee;"><b>Αιτιολογία:</b>{{receipt.receiptDescription}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><br /></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #999999;">
+                            <td colspan="2">
+                                <table style="width:100%;height:100%;border-collapse: collapse;">
+                                    <tr>
+                                        <td style="background-color:#eeeeee;border-bottom:1px solid #999999;">Είδος Υπηρεσίας</td>
+                                        <td style="background-color:#eeeeee;border-bottom:1px solid #999999;">Δαπάνη για πελάτη</td>
+                                        <td style="background-color:#eeeeee;border-bottom:1px solid #999999;">Αμοιβή</td>
+                                        <td style="background-color:#eeeeee;border-bottom:1px solid #999999;">Σύνολο</td>
+                                    </tr>
+                                    <tr ng-repeat="it in receipt.invoiceItems">
+                                        <td>{{it.description}}</td>
+                                        <td>{{it.paymentClientBehalf}}</td>
+                                        <td>{{it.payment}}</td>
+                                        <td>{{1*it.paymentClientBehalf + 1*it.payment}}</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr align="right">
+                            <td style="border-right:1px solid #999999;width:85%"><b>Καθαρό ποσό:</b>&nbsp;&nbsp; </td>
+                            <td align="left">{{receipt.netAmount}}€</td>
+                        </tr>
+                        <tr align="right">
+                            <td style="border-right:1px solid #999999;"><b>ΦΠΑ 23%:</b>&nbsp;&nbsp;</td>
+                            <td align="left">{{receipt.vatAmount}}€</td>
+                        </tr>
+                        <tr align="right" style="border-top:1px solid #999999;background-color:#eeeeee;">
+                            <td style="border-right:1px solid #999999;"><b>Σύνολο:</b>&nbsp;&nbsp;</td>
+                            <td align="left">{{receipt.totalAmount}}€</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+

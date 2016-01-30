@@ -1,0 +1,69 @@
+﻿<div style="padding-left:10px;" ng-repeat="mreceipt in multiReceipts">
+    <div id="mreceiptviewdiv{indexNumber}">
+        
+        <table style="border:1px solid #cccccc;width:100%;height:100%;padding:10px;">
+            <tr style="margin-bottom: 50px;">
+                <td>
+                    <img src="http://www.tsotsis.gr/Portals/0/logo2.png"/>
+                </td>
+                <td>
+                    Κολοκοτρώνη 34 και Εδέσσης | 54630<br />
+                    Σταυρούπολη | Θεσσαλονίκη<br />
+                    Τηλ. & Φαξ: 2310.60.10.83<br />
+                    Email: info@tsotsis.gr<br />
+                    Α.Φ.Μ 800465929 Δ.Ο.Υ. Ε' Θεσ/νίκης
+                </td>
+            </tr>
+        </table><br /><br />
+        <table style="border:1px solid #cccccc;width:100%;height:100%;padding:10px;">
+            <tr>
+                <td>
+                    <table style="width:100%">
+                        <tr style="margin-bottom: 30px;">
+                            <td>
+                                <label style="font-size:20px;font-weight: bold">Απόδειξη Παροχής Υπηρεσιών</label>
+                            </td>
+                            <td>
+                                <label style="font-size:20px;font-weight: bold">{amount}€</label>
+                            </td>
+                        </tr>
+                    </table><br /><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table>
+                        <tr style="margin-bottom: 10px;">
+                            <td colspan="2">
+                                Ο παρακάτω υπογεγραμμένος <b>Τσότσης Ιωάννης</b><br />
+                                Έλαβα από <b>{firstName} {lastName}</b><br />
+                                Δ/νση <b>{address}</b><br />
+                                Επάγγελμα <b>{jobTitle}</b> Α.Φ.Μ <b>{afm}</b> Δ.Ο.Υ <b>{doy}</b><br />
+                                Το Ποσό των Ευρώ (€): <b>{amount}</b><br />
+                                <b>Αιτιολογία:</b> {desciption}
+                            </td>
+                        </tr>
+                    </table><br /><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table>
+                        <tr style="margin-bottom: 10px;">
+                            <td style="width:70%"></td><td><label style="font-size:18px;font-weight: bold">Ο Λαβών</label></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><b>Ημερομηνία</b> {date}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">www.tsotsis.gr - Στην τιμή συμπεριλαμβάνεται ο ΦΠΑ.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Αρ.Απόδειξης: {indexNumber}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

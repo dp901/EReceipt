@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\inetpub\wwwroot\ereceiptsAPI</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Common.Logging.dll">
+      <publishTime>08/23/2013 16:40:32</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>12/02/2014 18:22:11</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>12/02/2014 18:22:11</publishTime>
+    </File>
+    <File Include="bin/EReceipt.API.dll">
+      <publishTime>02/05/2015 13:09:52</publishTime>
+    </File>
+    <File Include="bin/EReceipt.API.dll.config">
+      <publishTime>12/02/2014 20:02:17</publishTime>
+    </File>
+    <File Include="bin/EReceipt.Models.dll">
+      <publishTime>02/04/2015 13:17:46</publishTime>
+    </File>
+    <File Include="bin/EReceipts.DAL.dll">
+      <publishTime>02/05/2015 13:09:51</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>02/02/2015 21:31:48</publishTime>
+    </File>
+    <File Include="bin/libeay32.dll">
+      <publishTime>08/23/2013 16:40:32</publishTime>
+    </File>
+    <File Include="bin/libgcc_s_dw2-1.dll">
+      <publishTime>08/23/2013 16:40:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>12/02/2014 18:25:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>12/02/2014 18:22:35</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>12/02/2014 18:25:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Cors.dll">
+      <publishTime>12/02/2014 19:58:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>12/02/2014 18:32:11</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>12/02/2014 18:32:11</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>12/02/2014 18:42:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>12/02/2014 18:42:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>12/02/2014 18:43:36</publishTime>
+    </File>
+    <File Include="bin/mingwm10.dll">
+      <publishTime>08/23/2013 16:40:32</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>12/02/2014 18:28:40</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>12/02/2014 18:32:11</publishTime>
+    </File>
+    <File Include="bin/Pechkin.dll">
+      <publishTime>09/12/2013 18:40:46</publishTime>
+    </File>
+    <File Include="bin/ssleay32.dll">
+      <publishTime>08/23/2013 16:40:32</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>07/09/2013 22:04:48</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>12/02/2014 18:31:15</publishTime>
+    </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>12/02/2014 19:51:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Cors.dll">
+      <publishTime>12/02/2014 19:51:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>12/02/2014 18:31:15</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Owin.dll">
+      <publishTime>12/02/2014 18:31:15</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>12/02/2014 18:28:40</publishTime>
+    </File>
+    <File Include="bin/wkhtmltox0.dll">
+      <publishTime>08/23/2013 16:40:32</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>11/30/2014 19:34:02</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>02/04/2015 20:13:21</publishTime>
+    </File>
+    <File Include="receiptTemplate.html">
+      <publishTime>02/05/2015 11:39:38</publishTime>
+    </File>
+    <File Include="receipt_template.html">
+      <publishTime>12/02/2014 11:44:58</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/04/2015 20:41:37</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,37 @@
+﻿<div class="row" ng-show="!authentication.isAuth">
+    <div class="col-md-5">
+        &nbsp;
+    </div>
+    <div class="col-md-6">
+        <p><h3>Ηλεκτρονικές Αποδείξεις</h3></p>
+        <p><a class="btn btn-info btn-block" href="#/login" role="button">Είσοδος &raquo;</a></p>
+    </div>
+    <div class="col-md-4" ng-show="false">
+        <h2>Sign Up</h2>
+        <p class="text-primary">Use the button below to create Username and Password to access the secured content using a token.</p>
+        <p><a class="btn btn-info" href="#/signup" role="button">Sign Up &raquo;</a></p>
+    </div>
+    <div class="col-md-2">
+        &nbsp;
+    </div>
+</div>
+<div class="row" ng-show="authentication.isAuth">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-3"><h3><i class="fa fa-home"></i> Home</h3></div>
+            </div>
+            <div ng-controller="clientsController" class="well well-lg">
+                <p>Ειδοποιήσεις Πελατών</p>
+                <div class="text-danger" ng-repeat="client in clientAlerts">
+                    <h5>{{client.indexNumber}} - {{client.address}}</h5>
+                    <ul>
+                        <li ng-repeat="alert in client.alerts">
+                            {{alert.name}}: {{alert.description}} (Ημερομηνία: {{alert.date | date:"yyyy-MM-dd"}})
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

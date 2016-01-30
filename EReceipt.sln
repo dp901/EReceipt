@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EReceipt.API", "EReceipt.API\EReceipt.API.csproj", "{384881DF-0309-4FDC-A8DC-EC84D6410153}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EReceipt.Web", "EReceipt.Web\EReceipt.Web.csproj", "{E8829DB3-3CF5-4893-8AF5-E18F90401EA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EReceipt.DAL", "EReceipts.DAL\EReceipt.DAL.csproj", "{56655F52-1515-4BBE-9FA4-5DF38C9E390C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EReceipt.Models", "EReceipt.Models\EReceipt.Models.csproj", "{B7896911-00C3-4AEF-B6F6-E805E55A1600}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{384881DF-0309-4FDC-A8DC-EC84D6410153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{384881DF-0309-4FDC-A8DC-EC84D6410153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{384881DF-0309-4FDC-A8DC-EC84D6410153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{384881DF-0309-4FDC-A8DC-EC84D6410153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8829DB3-3CF5-4893-8AF5-E18F90401EA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8829DB3-3CF5-4893-8AF5-E18F90401EA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8829DB3-3CF5-4893-8AF5-E18F90401EA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8829DB3-3CF5-4893-8AF5-E18F90401EA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56655F52-1515-4BBE-9FA4-5DF38C9E390C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56655F52-1515-4BBE-9FA4-5DF38C9E390C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56655F52-1515-4BBE-9FA4-5DF38C9E390C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56655F52-1515-4BBE-9FA4-5DF38C9E390C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7896911-00C3-4AEF-B6F6-E805E55A1600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7896911-00C3-4AEF-B6F6-E805E55A1600}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7896911-00C3-4AEF-B6F6-E805E55A1600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7896911-00C3-4AEF-B6F6-E805E55A1600}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

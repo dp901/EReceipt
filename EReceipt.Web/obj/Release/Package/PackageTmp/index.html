@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <title>E-Receipts</title>
+    <link href="content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/css/site.css" rel="stylesheet" />
+    <link href="content/css/loading-bar.css" rel="stylesheet" />
+    <link href="content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="content/css/social-buttons.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body>
+    
+    <div ng-controller="indexController">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#/dashboard">Home</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li data-ng-hide="!authentication.isAuth"><a href="#">Welcome {{authentication.userName}}</a></li>
+                        <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()">Logout</a></li>
+                        <li data-ng-hide="authentication.isAuth"> <a href="#/login">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="mainContent">
+                <div class="row">
+                    <div class="col-lg-3 well marginRight20" ng-show="authentication.isAuth">
+                        <ul class="nav navbar-btn">
+                            <li ng-repeat="item in menubar" ng-class="{'nav-active': isMenuActive(item), 'nav-inactive': !isMenuActive(item)}" ng-switch="item.hasSubmenu">
+                                <a ng-cloak ng-show="item.visible" class="linkPointer" ng-switch-when="false" ng-href="#/{{item.controller}}">
+                                    <i class="{{item.cssClass}}"></i><span style='margin-left:10px'>{{item.title}}</span>
+                                </a>
+                                <a ng-cloak ng-show="item.visible" class="linkPointer" ng-switch-when="true" data-toggle="{{item.hasSubmenu == true ? 'collapse' : ''}}" data-target="#{{item.submenuDiv}}">
+                                    <i class="{{item.cssClass}}"></i><span style='margin-left:10px'>{{item.title}}</span>
+                                    <span class='caret'></span>
+                                </a>
+                                <a ng-cloak ng-show="!item.visible && item.inactivity" class="inactive"><i class="{{item.cssClass}}"></i><span style='margin-left:10px'>{{item.title}}</span></a>
+                                <div id="{{item.submenuDiv}}" class="collapse submenuContainer">
+                                    <ul class="nav navbar-btn">
+                                        <li ng-repeat="subitem in item.subItems" ng-show="common.demoMode" class="nav-inactive">
+                                            <a class="inactive">
+                                                <i class="{{subitem.cssClass}}"></i><span style='margin-left:10px'>{{subitem.title}}</span>
+                                            </a>
+                                        </li>
+                                        <li ng-repeat="subitem in item.subItems" ng-show="!common.demoMode" ng-class="{'subnav-active': isMenuActive(subitem), 'subnav-inactive': !isMenuActive(subitem)}">
+                                            <a class="inactive" ng-show="!subitem.visible && subitem.inactivity" >
+                                                <i class="{{subitem.cssClass}}"></i><span style='margin-left:10px'>{{subitem.title}}</span>
+                                            </a>
+                                            <a ng-show="subitem.visible" class="linkPointer" ng-href="#/{{subitem.controller}}">
+                                                <i class="{{subitem.cssClass}}"></i><span style='margin-left:10px'>{{subitem.title}}</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-8">
+                        <div data-ng-view="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="text-muted">Created by Voula Dionisiou. Website: <a target="_blank" href="http://www.vdionisiou.gr">vdionisiou.gr</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 3rd party libraries -->
+    
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
+    <script src="scripts/angular-locale_el-gr.js"></script>
+    <script src="scripts/angular-local-storage.min.js"></script>
+    <script src="scripts/loading-bar.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+
+    <!-- Load app main script -->
+    <script src="app/app.js?v=2"></script>
+
+    <!-- Load services -->
+    <script src="app/services/authInterceptorService.js?v=2"></script>
+    <script src="app/services/authService.js?v=2"></script>
+    <script src="app/services/receiptsService.js?v=2"></script>
+    <!-- Load controllers -->
+    <script src="app/controllers/indexController.js?v=2"></script>
+    <script src="app/controllers/homeController.js?v=2"></script>
+    <script src="app/controllers/loginController.js?v=2"></script>
+    <script src="app/controllers/signupController.js?v=2"></script>
+    <script src="app/controllers/clientsController.js?v=2"></script>
+    <script src="app/controllers/receiptsController.js?v=2"></script>
+    <!-- Load custom filters -->
+    <!-- Load custom directives -->
+    <script src="app/directives/trNgGrid.js"></script>
+
+</body>
+</html>

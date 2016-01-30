@@ -1,0 +1,7 @@
+C:\Users\voula\Documents\Work\E-Receipt\EReceipt\EReceipts.DAL\bin\Release\EReceipts.DAL.dll
+C:\Users\voula\Documents\Work\E-Receipt\EReceipt\EReceipts.DAL\bin\Release\EReceipts.DAL.pdb
+C:\Users\voula\Documents\Work\E-Receipt\EReceipt\EReceipts.DAL\bin\Release\EReceipt.Models.dll
+C:\Users\voula\Documents\Work\E-Receipt\EReceipt\EReceipts.DAL\bin\Release\EReceipt.Models.pdb
+C:\Users\voula\Documents\Work\E-Receipt\EReceipt\EReceipts.DAL\obj\Release\EReceipt.DAL.csprojResolveAssemblyReference.cache
+C:\Users\voula\Documents\Work\E-Receipt\EReceipt\EReceipts.DAL\obj\Release\EReceipts.DAL.dll
+C:\Users\voula\Documents\Work\E-Receipt\EReceipt\EReceipts.DAL\obj\Release\EReceipts.DAL.pdb

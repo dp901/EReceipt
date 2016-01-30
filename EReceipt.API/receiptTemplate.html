@@ -1,0 +1,75 @@
+﻿<div style="padding-left:10px;" ng-repeat="mreceipt in multiReceipts">
+    <div id="mreceiptviewdiv{indexNumber}">
+        <table style="border-bottom:1px solid #cccccc;width:100%;height:100%;padding:10px;">
+            <tr style="margin-bottom: 50px;">
+                <td>
+                    <img src="http://admin.tsotsis.gr/content/img/logo2.png"/>
+                </td>
+            </tr>
+            <tr align="right"><td colspan="2"><b>Απόδειξη Παροχής Υπηρεσιών</b></td></tr>
+        </table><br />
+        <table style="border-bottom: 1px solid #999999;width:100%;height:100%;">
+            <tr>
+                <td>
+                    ΤΣΟΤΣΗΣ ΑΝΕΛΚΥΣΤΗΡΕΣ<br />
+                    ΕΓΚΑΤΑΣΤΑΣΗ & ΣΥΝΤΗΡΗΣΗ ΑΝΕΛΚΥΣΤΗΡΩΝ<br />
+                    Κολοκοτρώνη 34 και Εδέσσης | 56430<br />
+                    Σταυρούπολη | Θεσσαλονίκη<br />
+                    Τηλ. & Φαξ: 2310.60.10.83<br />
+                    Email: info@tsotsis.gr<br />
+                    Α.Φ.Μ 800465929 Δ.Ο.Υ. Ε' Θεσ/νίκης
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Αρ. Απόδειξης:</td>
+                            <td>{indexNumber}</td>
+                        </tr>
+                        <tr>
+                            <td>Ημερομηνία:</td>
+                            <td>{date}</td>
+                        </tr>
+                        <tr>
+                            <td>Υπόχρεος:</td>
+                            <td>{firstName} {lastName}</td>
+                        </tr>
+                        <tr>
+                            <td>ΑΦΜ:</td>
+                            <td>{afm}</td>
+                        </tr>
+                        <tr>
+                            <td>ΔΟΥ:</td>
+                            <td>{doy}</td>
+                        </tr>
+                        <tr>
+                            <td>Διεύθυνση:</td>
+                            <td>{address}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table style="width:100%;height:100%;border-collapse: collapse;margin-top:30px;">
+            <tr>
+                <td colspan="2" style="background-color:#eeeeee;"><b>Αιτιολογία:</b>{desciption}</td>
+            </tr>
+            <tr>
+                <td colspan="2"><br /><br /></td>
+            </tr>
+            <tr align="right">
+                <td style="border-right:1px solid #999999;">Καθαρό ποσό:&nbsp;&nbsp; </td>
+                <td align="left">{net}€</td>
+            </tr>
+            <tr align="right">
+                <td style="border-right:1px solid #999999;">ΦΠΑ {vatpercent}%:&nbsp;&nbsp;</td>
+                <td align="left">{vat}€</td>
+            </tr>
+            <tr align="right" style="border-top:1px solid #999999;background-color:#eeeeee;">
+                <td style="border-right:1px solid #999999;"><b>Σύνολο:</b>&nbsp;&nbsp;</td>
+                <td align="left">{total}€</td>
+            </tr>
+        </table><br />
+        <table style="width:70%;"><tr align="right"><td>Ο Λαβών:</td></tr></table><br/>
+        <table style="width:100%;"><tr><td>www.tsotsis.gr</td></tr></table>
+    </div>
+</div>

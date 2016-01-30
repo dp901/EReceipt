@@ -1,0 +1,6 @@
+C:\Users\voula\Documents\Work\E-Receipt\EReceipt\EReceipt.Web\bin\EReceipt.Web.dll.config
+C:\Users\voula\Documents\Work\E-Receipt\EReceipt\EReceipt.Web\bin\EReceipt.Web.dll
+C:\Users\voula\Documents\Work\E-Receipt\EReceipt\EReceipt.Web\bin\EReceipt.Web.pdb
+C:\Users\voula\Documents\Work\E-Receipt\EReceipt\EReceipt.Web\obj\Debug\EReceipt.Web.dll
+C:\Users\voula\Documents\Work\E-Receipt\EReceipt\EReceipt.Web\obj\Debug\EReceipt.Web.pdb
+C:\Users\voula\Documents\Work\E-Receipt\EReceipt\EReceipt.Web\obj\Debug\EReceipt.Web.csprojResolveAssemblyReference.cache
